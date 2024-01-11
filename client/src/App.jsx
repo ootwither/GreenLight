@@ -13,6 +13,17 @@ function ButtonGrid({items}) {
   )
 }
 
+function ConfigurePanel() {
+  return (
+    <>
+    <form>
+
+    </form>
+
+    </>
+  )
+}
+
 function App() {
 
   return (
