@@ -2,12 +2,19 @@
 // import { useState } from 'react'
 import items from './assets/items'
 
+
 import './App.css'
 
 function ButtonGrid({items}) {
   return (
     <>
-    {items.map(item => <button key={item.id}>{item.short}</button>
+    {items.map(item =>
+    <button key={item.id} onClick={item => item.toggle = !item.toggle}>
+      <div className={item.toggle ? 'selected' : ''}>
+      {item.short}
+      </div>
+      <div>OFF</div>
+      </button>
         )}
     </>
   )

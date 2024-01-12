@@ -6,10 +6,11 @@ CSS-reset from https://www.joshwcomeau.com/css/custom-css-reset/
   box-sizing: border-box;
 }
 /*
-  2. Remove default margin
+  2. Remove default margin and apply min-width
 */
 * {
   margin: 0;
+  min-width: 0;
 }
 /*
   Typographic tweaks!
