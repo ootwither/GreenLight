@@ -2,9 +2,12 @@
 CSS-reset from https://www.joshwcomeau.com/css/custom-css-reset/
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 /*
   2. Remove default margin and apply min-width
 */
@@ -12,6 +15,7 @@ CSS-reset from https://www.joshwcomeau.com/css/custom-css-reset/
   margin: 0;
   min-width: 0;
 }
+
 /*
   Typographic tweaks!
   3. Add accessible line-height
@@ -21,28 +25,52 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
 /*
   5. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
+
 /*
   6. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
+
 /*
   7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
+
 /*
   8. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
+  display: flex;
+  --steel-pink: #c011d0ff;
+  --black-olive: #414742ff;
+  --office-green: #1a771bff;
+  --night: #0b0a0cff;
+  --fire-engine-red: #db162fff;
 }

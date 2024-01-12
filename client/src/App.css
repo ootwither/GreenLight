@@ -3,5 +3,21 @@
 }
 
 .WARNING {
-  background-color: red;
+  background-color: var(--fire-engine-red);
+  color: white;
+}
+
+
+* {
+  font-family: b612;
+  background-color: ;
+}
+
+.buttonGrid {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  border: 10px solid;
+  padding: 30px;
+  gap: 10px;
 }
