@@ -10,7 +10,9 @@
 
 * {
   font-family: b612;
-  background-color: ;
+  background-color: var(--night);
+  color: whitesmoke;
+
 }
 
 .buttonGrid {
@@ -20,4 +22,8 @@
   border: 10px solid;
   padding: 30px;
   gap: 10px;
+}
+
+button {
+  cursor: pointer;
 }
