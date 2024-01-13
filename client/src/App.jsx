@@ -5,20 +5,23 @@ import { useEffect, useState } from 'react'
 
 function ButtonGrid({ time }) {
   const [tasks, setTasks] = useState(items);
+
+  function taskReset (item) {
+    setTasks(
+      tasks.map((task) => {
+        return task.id === item.id ? {
+          ...task, lastChecked: Date.now()
+        } : task;
+      })
+    )
+  }
+
   return (
     <>
       <div className='buttonGrid'>
         {tasks.map(item =>
           <button key={item.id}
-            onClick={() => {
-              setTasks(
-                tasks.map((task) => {
-                  return task.id === item.id ? {
-                    ...task, lastChecked: Date.now()
-                  } : task;
-                })
-              )
-            }}
+            onClick={() => taskReset(item)}
           >
             <div className={time > (item.lastChecked + item.interval) ? 'WARNING' : ''}>
               {item.short}

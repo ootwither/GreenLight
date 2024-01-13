@@ -5,6 +5,7 @@ const items = [
     id: 1,
     interval: 5000,
     lastChecked: 1705068279956,
+    resetAt: undefined,
   },
   {
     task: 'take brain drugs',
@@ -12,6 +13,7 @@ const items = [
     id: 2,
     interval: 3600000,
     lastChecked: 1705068279956,
+    resetAt: undefined,
   },
   {
     task: 'stretch',
@@ -19,6 +21,7 @@ const items = [
     id: 3,
     interval: 600000,
     lastChecked: 1705068279956,
+    resetAt: undefined,
   },
   {
     task: 'Tell Luca you love her',
@@ -26,6 +29,7 @@ const items = [
     id: 4,
     interval: 600000,
     lastChecked: 1705068279956,
+    resetAt: undefined,
   },
   {
     task: 'feed yozi',
@@ -33,6 +37,7 @@ const items = [
     id: 5,
     interval: 36000000,
     lastChecked: 1705068279956,
+    resetAt: undefined,
   },
 ];
 
