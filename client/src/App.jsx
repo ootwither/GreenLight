@@ -33,6 +33,46 @@ function ButtonGrid({ time }) {
   )
 }
 
+function ConfigurePanel() {
+  const[name, setName] = useState('')
+  const[shortText, setShortText] = useState('')
+  const[interval, setInterval] = useState('')
+
+  function handleName (e) {
+    setName(e.target.value)
+    log
+  }
+  function handleShortText (e) {
+    setShortText(e.target.value)
+  }
+  function handleInterval (e) {
+    setInterval(e.target.value)
+  }
+
+  function handleSubmit (event) {
+    console.log(name)
+    event.preventDefault();
+    setName('');
+    setShortText('');
+    setInterval('');
+  }
+
+  return (
+    <>
+    <form className='configurePanel' >
+      <h3>Name</h3>
+    <input type='text' value={name} name='name' onChange={handleName} ></input>
+      <h3>Short text</h3>
+    <input type='text' value={shortText} name = 'shortText' onChange={handleShortText}></input>
+      <h3>interval</h3>
+    <input type='text' value={interval} name = 'interval' onChange={handleInterval}></input>
+    <button type='submit' onSubmit={handleSubmit}></button>
+    </form>
+
+    </>
+  )
+}
+
 function App() {
   const [time, setTime] = useState(Date.now());
 
@@ -47,6 +87,7 @@ function App() {
       {/* <div>{time}</div> */}
 
       <ButtonGrid time={time} />
+      <ConfigurePanel/>
 
     </>
   )
@@ -55,16 +96,7 @@ function App() {
 export default App
 
 
-// function ConfigurePanel() {
-//   return (
-//     <>
-//     <form>
 
-//     </form>
-
-//     </>
-//   )
-// }
 
 // className={item.toggle ? 'selected' : ''}
 
