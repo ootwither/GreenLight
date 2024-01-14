@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import items from './assets/items'
+// import items from './assets/items'
 import './App.css'
 import { useEffect, useState } from 'react'
+// import apiService from './services';
 
-function ButtonGrid({ time }) {
-  const [tasks, setTasks] = useState(items);
+function ButtonGrid({ time, tasks, setTasks }) {
 
   function taskReset (item) {
     setTasks(
       tasks.map((task) => {
-        return task.id === item.id ? {
+        return task._id === item._id ? {
           ...task, lastChecked: Date.now()
         } : task;
       })
@@ -20,11 +20,11 @@ function ButtonGrid({ time }) {
     <>
       <div className='buttonGrid'>
         {tasks.map(item =>
-          <button key={item.id}
+          <button key={item._id}
             onClick={() => taskReset(item)}
           >
             <div className={time > (item.lastChecked + item.interval) ? 'WARNING' : ''}>
-              {item.short}
+              {item.shortText}
             </div>
           </button>
         )}
@@ -75,6 +75,7 @@ function ConfigurePanel() {
 
 function App() {
   const [time, setTime] = useState(Date.now());
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     setInterval(() => {
@@ -82,11 +83,19 @@ function App() {
     }, 1000)
   }, [])
 
+  useEffect(() => {
+    fetch('http://localhost:3000/tasks').then((response) => {
+    return response.json();
+  }).then((data) => {
+    setTasks(data);
+    });
+  }, [])
+
   return (
     <>
       {/* <div>{time}</div> */}
 
-      <ButtonGrid time={time} />
+      <ButtonGrid time={time} tasks={tasks} setTasks={setTasks}/>
       <ConfigurePanel/>
 
     </>
