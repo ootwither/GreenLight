@@ -34,13 +34,13 @@ function ButtonGrid({ time }) {
 }
 
 function ConfigurePanel() {
-  const[name, setName] = useState('')
+  const[task, setTask] = useState('')
   const[shortText, setShortText] = useState('')
   const[interval, setInterval] = useState('')
 
-  function handleName (e) {
-    setName(e.target.value)
-    log
+  function handleTask (e) {
+    setTask(e.target.value)
+    console.log(task);
   }
   function handleShortText (e) {
     setShortText(e.target.value)
@@ -50,9 +50,9 @@ function ConfigurePanel() {
   }
 
   function handleSubmit (event) {
-    console.log(name)
+    console.log(task)
     event.preventDefault();
-    setName('');
+    setTask('');
     setShortText('');
     setInterval('');
   }
@@ -61,12 +61,12 @@ function ConfigurePanel() {
     <>
     <form className='configurePanel' >
       <h3>Name</h3>
-    <input type='text' value={name} name='name' onChange={handleName} ></input>
+    <input type='text' value={task} name='task' onChange={handleTask} ></input>
       <h3>Short text</h3>
     <input type='text' value={shortText} name = 'shortText' onChange={handleShortText}></input>
       <h3>interval</h3>
     <input type='text' value={interval} name = 'interval' onChange={handleInterval}></input>
-    <button type='submit' onSubmit={handleSubmit}></button>
+    <button type='submit' onSubmit={handleSubmit}>ADD NEW</button>
     </form>
 
     </>

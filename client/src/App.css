@@ -28,6 +28,7 @@
   margin: 100px;
   border: 10px solid;
   padding: 30px;
+  gap: 30px;
 }
 
 button {
