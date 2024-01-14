@@ -2,36 +2,9 @@
 // import items from './assets/items'
 import './App.css'
 import { useEffect, useState } from 'react'
+import ButtonGrid from './ButtonGrid/index'
 // import apiService from './services';
 
-function ButtonGrid({ time, tasks, setTasks }) {
-
-  function taskReset (item) {
-    setTasks(
-      tasks.map((task) => {
-        return task._id === item._id ? {
-          ...task, lastChecked: Date.now()
-        } : task;
-      })
-    )
-  }
-
-  return (
-    <>
-      <div className='buttonGrid'>
-        {tasks.map(item =>
-          <button key={item._id}
-            onClick={() => taskReset(item)}
-          >
-            <div className={time > (item.lastChecked + item.interval) ? 'WARNING' : ''}>
-              {item.shortText}
-            </div>
-          </button>
-        )}
-      </div>
-    </>
-  )
-}
 
 function ConfigurePanel() {
   const[task, setTask] = useState('')

@@ -1,0 +1,16 @@
+* {
+  font-family: b612;
+  background-color: var(--night);
+  color: whitesmoke;
+  text-shadow: 0 0 7px #fff;
+
+}
+
+.buttonGrid {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  border: 10px solid;
+  padding: 30px;
+  gap: 10px;
+}
