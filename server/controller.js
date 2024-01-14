@@ -18,9 +18,13 @@ exports.postTask = async (req,res) => {
       res.status(400);
       res.send('Error: missing parameter(s)');
     }
-    await task.create(req.body);
+    if (typeof req.body.task != 'string' || typeof req.body.shortText != 'string' || typeof req.body.interval != 'number') {
+      res.status(400);
+      res.send('Error: invalid type(s)');
+    }
+    const newTask = await task.create(req.body);
     res.status(201);
-    res.send(req.body);
+    res.send(newTask);
   } catch (e) {
     res.status(500);
   }
