@@ -2,7 +2,7 @@ const mongoose = require('./db');
 
 const taskSchema = new mongoose.Schema({
   task: String,
-  shortText: Date,
+  shortText: String,
   interval: Number,
 });
 
