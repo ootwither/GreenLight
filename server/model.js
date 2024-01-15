@@ -10,8 +10,8 @@ const taskSchema = new mongoose.Schema({
 
 const Tasks= mongoose.model('task', taskSchema);
 
-if (Tasks.find().length == 0) { // populates the DB with default items on startup
-  Tasks.create(initItems);
-}
+// Tasks.create(initItems); //!! uncomment me and run the server once to populate mongo with some default data
+
+
 
 module.exports = Tasks;

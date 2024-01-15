@@ -30,7 +30,7 @@ function App() {
       {/* <div>{time}</div> */}
 
       <ButtonGrid time={time} tasks={tasks} setTasks={setTasks}/>
-      <ConfigurePanel/>
+      <ConfigurePanel tasks={tasks} setTasks={setTasks}/>
 
     </>
   )

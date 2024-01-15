@@ -30,20 +30,20 @@ const items = [
     "lastChecked": "1705254823958"
   },
   {
-    "task": "take medications",
-    "shortText": "T MED",
+    "task": "walk dog",
+    "shortText": "W DOG",
     "interval": 3600000,
     "lastChecked": "1705254823958"
   },
   {
-    "task": "take medications",
-    "shortText": "T MED",
+    "task": "commit regularly",
+    "shortText": "CMMT",
     "interval": 3600000,
     "lastChecked": "1705254823958"
   },
   {
-    "task": "take medications",
-    "shortText": "T MED",
+    "task": "meditate",
+    "shortText": "MED",
     "interval": 3600000,
     "lastChecked": "1705254823958"
   }
