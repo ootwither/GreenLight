@@ -29,3 +29,18 @@ exports.postTask = async (req,res) => {
     res.status(500);
   }
 };
+
+exports.updateTask = async (req, res) => {
+  try {
+    let filter = {_id: req.body._id};
+    let update = {lastChecked: req.body.lastChecked};
+    const updatedTask = await task.findOneAndUpdate(filter, update, {
+      new: true
+    });
+    res.status(200);
+    res.send(updatedTask);
+
+  } catch (e) {
+    res.status(500);
+  }
+}
