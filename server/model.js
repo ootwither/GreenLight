@@ -1,4 +1,5 @@
 const mongoose = require('./db');
+const initItems = require('./tasks')
 
 const taskSchema = new mongoose.Schema({
   task: String,
@@ -8,5 +9,9 @@ const taskSchema = new mongoose.Schema({
 });
 
 const Tasks= mongoose.model('task', taskSchema);
+
+if (Tasks.find().length == 0) { // populates the DB with default items on startup
+  Tasks.create(initItems);
+}
 
 module.exports = Tasks;
