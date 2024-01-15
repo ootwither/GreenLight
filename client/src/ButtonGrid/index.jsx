@@ -2,14 +2,29 @@
 
 function ButtonGrid({ time, tasks, setTasks }) {
 
-  function taskReset (item) {
+  async function taskReset (item) {
+    const newTime = Date.now();
     setTasks(
       tasks.map((task) => {
         return task._id === item._id ? {
-          ...task, lastChecked: Date.now()
+          ...task, lastChecked: newTime
         } : task;
       })
     )
+
+    let updatedTask = {};
+    Object.assign(updatedTask, item);
+    updatedTask.lastChecked = newTime;
+    await fetch('http://localhost:3000/tasks', {
+      method: "PUT",
+      mode: "cors", // no-cors, *cors, same-origin
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(updatedTask), // body data type must match "Content-Type" header
+    })
   }
 
   return (
