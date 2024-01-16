@@ -8,11 +8,23 @@
   text-shadow: 0 0 7px var(--fire-engine-red);
 }
 
+.WARNING h3 {
+  color: var(--fire-engine-red);
+  text-shadow: 0 0 7px var(--fire-engine-red);
+}
+
 * {
   font-family: b612;
   background-color: var(--night);
   color: whitesmoke;
   text-shadow: 0 0 7px #fff;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
 
 .buttonGrid {
@@ -22,6 +34,8 @@
   border: 10px solid;
   padding: 30px;
   gap: 10px;
+  flex-wrap: wrap;
+  /* flex-basis: 100px; */
 }
 
 .buttonGrid button {

@@ -27,21 +27,12 @@ function App() {
 
   return (
     <>
-      {/* <div>{time}</div> */}
-
+      <div className='app'>
       <ButtonGrid time={time} tasks={tasks} setTasks={setTasks}/>
       <ConfigurePanel tasks={tasks} setTasks={setTasks}/>
-
+      </div>
     </>
   )
 }
 
 export default App
-
-
-
-
-// className={item.toggle ? 'selected' : ''}
-
-
-
