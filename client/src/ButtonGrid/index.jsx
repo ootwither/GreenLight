@@ -34,7 +34,9 @@ function ButtonGrid({ time, tasks, setTasks }) {
           <button key={item._id}
             onClick={() => taskReset(item)}
           >
-            <div className={time > (item.lastChecked + item.interval) ? 'WARNING' : ''}>
+            <div className={time > (item.lastChecked + item.interval) ? 'WARNING' :
+            time > (item.lastChecked + item.interval*0.25) ? 'SOON' : ''
+            }>
               <h3>{item.shortText}</h3>
             </div>
           </button>

@@ -2,6 +2,68 @@
   background-color: blue;
 }
 
+* {
+  font-family: b612;
+  background-color: var(--night);
+  color: whitesmoke;
+  text-shadow: 0 0 7px #fff;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.statusPanel {
+  flex-grow: 3;
+  flex-basis: 200px;
+}
+
+.buttonGrid {
+  display: flex;
+  flex-direction: row;
+  /* margin: 100px; */
+  border: 5px solid;
+  border-radius: 5px;
+  padding: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: 20px;
+}
+
+.configurePanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 100px;
+  border: 5px solid;
+  border-radius: 5px;
+  padding: 30px;
+  gap: 30px;
+  flex-grow:4;
+  flex-basis: 500px;
+}
+
+
+.buttonGrid button {
+  /* background-color: var(--night); */
+  /* border: 1px solid; */
+  margin: 5px;
+}
+
+.buttonGrid h3 {
+  background-color: var(--night);
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+
+button {
+  cursor: pointer;
+}
+
 .WARNING {
   /* background-color: var(--fire-engine-red); */
   color: var(--fire-engine-red);
@@ -13,49 +75,17 @@
   text-shadow: 0 0 7px var(--fire-engine-red);
 }
 
-* {
-  font-family: b612;
-  background-color: var(--night);
-  color: whitesmoke;
-  text-shadow: 0 0 7px #fff;
+.SOON h3 {
+  animation: blinkSoon 2s infinite;
 }
 
-.app {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-}
-
-.buttonGrid {
-  display: flex;
-  flex-direction: column;
-  margin: 100px;
-  border: 10px solid;
-  padding: 30px;
-  gap: 10px;
-  flex-wrap: wrap;
-  /* flex-basis: 100px; */
-}
-
-.buttonGrid button {
-  /* background-color: var(--night); */
-  /* border: 1px solid; */
-  margin: 5px;
-}
-
-.buttonGrid h3 {
-  background-color: var(--night);
-  border: 1px solid;
-}
-
-.configurePanel {
-  margin: 100px;
-  border: 10px solid;
-  padding: 30px;
-  gap: 30px;
-}
-
-button {
-  cursor: pointer;
+@keyframes blinkSoon {
+  0% {color: whitesmoke;
+    text-shadow: 0 0 7px #fff; }
+  50% {
+    color:darkorange;
+  text-shadow: 0 0 7px darkorange;
+  }
+  100% {color: whitesmoke;
+    text-shadow: 0 0 7px #fff; }
 }

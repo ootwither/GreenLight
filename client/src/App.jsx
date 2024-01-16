@@ -6,6 +6,16 @@ import ButtonGrid from './ButtonGrid/index'
 import ConfigurePanel from './ConfigurePanel/index';
 // import apiService from './services';
 
+function StatusPanel() {
+  return (
+    <>
+    <div className='statusPanel'>
+    <h3>testing</h3>
+    </div>
+    </>
+  )
+}
+
 
 function App() {
   const [time, setTime] = useState(Date.now());
@@ -28,6 +38,7 @@ function App() {
   return (
     <>
       <div className='app'>
+      <StatusPanel/>
       <ButtonGrid time={time} tasks={tasks} setTasks={setTasks}/>
       <ConfigurePanel tasks={tasks} setTasks={setTasks}/>
       </div>

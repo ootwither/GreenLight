@@ -53,6 +53,7 @@ function ConfigurePanel({tasks, setTasks}) {
     <input type='text' value={shortText} name = 'shortText' onChange={handleShortText}></input>
       <h3>interval</h3>
     <input type='text' value={interval} name = 'interval' onChange={handleInterval}></input>
+    <input type='range'></input>
     <button type='submit' >ADD NEW</button>
     </form>
 
