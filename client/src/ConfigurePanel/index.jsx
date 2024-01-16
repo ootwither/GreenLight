@@ -11,7 +11,6 @@ function ConfigurePanel({tasks, setTasks}) {
 
   function handleTask (e) {
     setTask(e.target.value)
-    // console.log(task);
   }
   function handleShortText (e) {
     setShortText(e.target.value)

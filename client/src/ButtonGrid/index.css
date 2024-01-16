@@ -14,3 +14,13 @@
   padding: 30px;
   gap: 10px;
 }
+
+button {
+  background-color: var(--black-olive);
+  border: 1px solid;
+}
+
+.WARNING {
+  background-color: var(--fire-engine-red);
+  color: white;
+}

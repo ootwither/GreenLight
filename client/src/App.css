@@ -3,17 +3,16 @@
 }
 
 .WARNING {
-  background-color: var(--fire-engine-red);
-  color: white;
+  /* background-color: var(--fire-engine-red); */
+  color: var(--fire-engine-red);
+  text-shadow: 0 0 7px var(--fire-engine-red);
 }
-
 
 * {
   font-family: b612;
   background-color: var(--night);
   color: whitesmoke;
   text-shadow: 0 0 7px #fff;
-
 }
 
 .buttonGrid {
@@ -23,6 +22,17 @@
   border: 10px solid;
   padding: 30px;
   gap: 10px;
+}
+
+.buttonGrid button {
+  /* background-color: var(--night); */
+  /* border: 1px solid; */
+  margin: 5px;
+}
+
+.buttonGrid h3 {
+  background-color: var(--night);
+  border: 1px solid;
 }
 
 .configurePanel {
