@@ -24,6 +24,8 @@ CSS-reset from https://www.joshwcomeau.com/css/custom-css-reset/
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100vh;
+
 }
 
 /*
@@ -67,7 +69,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
-  display: flex;
+  display: grid;
   --steel-pink: #c011d0ff;
   --black-olive: #414742ff;
   --office-green: #1a771bff;

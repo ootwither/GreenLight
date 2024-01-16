@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-function ButtonGrid({ time, tasks, setTasks }) {
+function ButtonGrid({ timeStamp, tasks, setTasks }) {
 
   async function taskReset (item) {
     const newTime = Date.now();
@@ -34,8 +34,8 @@ function ButtonGrid({ time, tasks, setTasks }) {
           <button key={item._id}
             onClick={() => taskReset(item)}
           >
-            <div className={time > (item.lastChecked + item.interval) ? 'WARNING' :
-            time > (item.lastChecked + item.interval*0.25) ? 'SOON' : ''
+            <div className={timeStamp > (item.lastChecked + item.interval) ? 'WARNING' :
+            timeStamp > (item.lastChecked + item.interval*0.25) ? 'SOON' : ''
             }>
               <h3>{item.shortText}</h3>
             </div>

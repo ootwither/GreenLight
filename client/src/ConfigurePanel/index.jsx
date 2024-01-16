@@ -4,25 +4,27 @@ import { useState } from "react"
 const url = 'http://localhost:3000'
 
 // eslint-disable-next-line no-unused-vars
-function ConfigurePanel({tasks, setTasks}) {
-  const[task, setTask] = useState('')
-  const[shortText, setShortText] = useState('')
-  const[interval, setInterval] = useState('')
+function ConfigurePanel({ tasks, setTasks }) {
+  const [task, setTask] = useState('')
+  const [shortText, setShortText] = useState('')
+  const [interval, setInterval] = useState('')
 
-  function handleTask (e) {
+  function handleTask(e) {
     setTask(e.target.value)
   }
-  function handleShortText (e) {
+  function handleShortText(e) {
     setShortText(e.target.value)
   }
-  function handleInterval (e) {
+  function handleInterval(e) {
     setInterval(e.target.value)
   }
 
-  async function handleSubmit (event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const newTask = {task, shortText : shortText.toUpperCase(), interval : Number(interval),
-    lastChecked: Date.now()}
+    const newTask = {
+      task, shortText: shortText.toUpperCase(), interval: Number(interval),
+      lastChecked: Date.now()
+    }
     setTask('');
     setShortText('');
     setInterval('');
@@ -46,17 +48,18 @@ function ConfigurePanel({tasks, setTasks}) {
 
   return (
     <>
-    <form className='configurePanel' onSubmit={handleSubmit} >
-      <h3>Task Description</h3>
-    <input type='text' value={task} name='task' onChange={handleTask} placeholder="Describe your task here"></input>
-      <h3>Short text</h3>
-    <input type='text' value={shortText} name = 'shortText' onChange={handleShortText}></input>
-      <h3>interval</h3>
-    <input type='text' value={interval} name = 'interval' onChange={handleInterval}></input>
-    <input type='range'></input>
-    <button type='submit' >ADD NEW</button>
-    </form>
-
+      <div className="configurePanel">
+        <form onSubmit={handleSubmit} >
+          <h3>Task Description</h3>
+          <input type='text' value={task} name='task' onChange={handleTask} placeholder="Describe your task here"></input>
+          <h3>Short text</h3>
+          <input type='text' value={shortText} name='shortText' onChange={handleShortText}></input>
+          <h3>interval</h3>
+          <input type='text' value={interval} name='interval' onChange={handleInterval}></input>
+          <input type='range' className="range-slider"></input>
+          <button type='submit' >ADD NEW</button>
+        </form>
+      </div>
     </>
   )
 }

@@ -18,7 +18,7 @@ function StatusPanel() {
 
 
 function App() {
-  const [time, setTime] = useState(Date.now());
+  const [timeStamp, setTime] = useState(Date.now());
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -38,8 +38,8 @@ function App() {
   return (
     <>
       <div className='app'>
-      <StatusPanel/>
-      <ButtonGrid time={time} tasks={tasks} setTasks={setTasks}/>
+      {/* <StatusPanel/> */}
+      <ButtonGrid timeStamp={timeStamp} tasks={tasks} setTasks={setTasks}/>
       <ConfigurePanel tasks={tasks} setTasks={setTasks}/>
       </div>
     </>
