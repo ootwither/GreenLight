@@ -25,7 +25,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   height: 100vh;
-
+  background-color: var(--black-olive);
 }
 
 /*
@@ -75,4 +75,5 @@ h6 {
   --office-green: #1a771bff;
   --night: #0b0a0cff;
   --fire-engine-red: #db162fff;
+  height:100vh;
 }

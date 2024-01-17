@@ -22,7 +22,8 @@ function ConfigurePanel({ tasks, setTasks }) {
   async function handleSubmit(event) {
     event.preventDefault();
     const newTask = {
-      task, shortText: shortText.toUpperCase(), interval: Number(interval),
+      task, shortText: shortText.toUpperCase(),
+      interval: Number(interval) * 60 * 1000,
       lastChecked: Date.now()
     }
     setTask('');
@@ -51,12 +52,27 @@ function ConfigurePanel({ tasks, setTasks }) {
       <div className="configurePanel">
         <form onSubmit={handleSubmit} >
           <h3>Task Description</h3>
-          <input type='text' value={task} name='task' onChange={handleTask} placeholder="Describe your task here"></input>
-          <h3>Short text</h3>
-          <input type='text' value={shortText} name='shortText' onChange={handleShortText}></input>
-          <h3>interval</h3>
-          <input type='text' value={interval} name='interval' onChange={handleInterval}></input>
-          {/* <input type='range' className="range-slider"></input> */}
+          <h4>Describe your task here</h4>
+          <input type='text' value={task} name='task' onChange={handleTask}></input>
+          <h3>Short Text</h3>
+          <h4>A 3-5 character short code for your task</h4>
+          <input type='text' value={shortText} name='shortText'
+          onChange={handleShortText}
+          ></input>
+          <h3>Interval</h3>
+          <h4>How often, in minutes, you need to repeat your task</h4>
+          <input type='text' value={interval} name='interval'
+          onChange={handleInterval}
+          ></input>
+          {/* <input type='range' className="range-slider"
+          min="0" max="100" value="50" id="fader" step="20" list="volsettings"><datalist id="volsettings"><option>0</option>
+          <option>20</option>
+          <option>40</option>
+          <option>60</option>
+          <option>80</option>
+          <option>100</option>
+          </datalist>
+          </input> */}
           <button type='submit' >ADD NEW</button>
         </form>
       </div>
